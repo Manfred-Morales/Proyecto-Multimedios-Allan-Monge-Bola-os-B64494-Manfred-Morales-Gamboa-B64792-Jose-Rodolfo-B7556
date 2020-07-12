@@ -1,0 +1,100 @@
+﻿.form {
+    background: rgba(0,0,0,.6);
+    width: 90%;
+    max-width: 650px;
+    margin: auto;
+    padding: 5px 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+
+    @media(max-width: 767px) {
+        width: 70%;
+    }
+
+    &__header {
+        font-weight: normal;
+        color: #ff851b;
+        text-align: center;
+        padding: 14px;
+        font-size: 29px;
+    }
+
+    &__span {
+        color: #fff;
+    }
+
+    &__title {
+        font-weight: normal;
+        padding: 14px 0;
+    }
+
+    &__label {
+        display: block;
+        color: #ff851b;
+        font-size: 20px;
+        font-family: "Roboto";
+        position: relative;
+        padding-bottom: 10px;
+    }
+
+    &__input {
+        background: rgba(0,0,0,.7);
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #ff851b;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 2px;
+        font-size: 16px;
+        color: #fff;
+        font-family: "Roboto";
+    }
+
+    &__textarea {
+        background: rgba(0,0,0,.7);
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #ff851b;
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 2px;
+        font-size: 16px;
+        color: #fff;
+        font-family: "Roboto";
+        resize: vertical;
+        max-height: 150px;
+        min-height: 50px;
+    }
+
+    &__image {
+        display: flex;
+        @media(max-width: 400px){
+            width:130px;
+        }
+    }
+
+    &__btnlist{
+        text-align:center;
+    }
+    &__submit {
+        margin-top: 15px;
+        margin-bottom:10px;
+        padding: 15px 0;
+        width: 30%;
+        outline: none;
+        border: none;
+        font-size: 19px;
+        font-family: "Roboto";
+        color: #fff;
+        background: #ff851b;
+        cursor: pointer;
+        transition: all .5s ease;
+
+        &:hover {
+            background: #f29718;
+        }
+    }
+}

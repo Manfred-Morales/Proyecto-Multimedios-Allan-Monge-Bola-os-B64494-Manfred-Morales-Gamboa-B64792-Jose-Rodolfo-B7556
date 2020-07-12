@@ -1,0 +1,61 @@
+﻿.article {
+    display: flex;
+    border-radius: 5px;
+    margin: 30px;
+    width: 740px;
+    background-color: $primary-color;
+
+    @media (max-width: 767px) {
+        display: block;
+        width: 300px;
+        height: auto;
+        box-shadow: 8px 0 8px 0 rgba(155, 155, 155, 1);
+    }
+
+    &__img {
+        width: 380px;
+        height: 480px;
+        border-radius: 2.5px;
+
+        @media (max-width: 767px) {
+            width: 220px;
+            height: 280px;
+            margin: 10px;
+            margin-left: 13%;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        background: url("../img/shoppingCart.png") no-repeat;
+        border: 0;
+        width: 54px;
+        height: 54px;
+        outline: none;
+        cursor: pointer;
+        margin-left: 42%;
+        margin-top: 20px;
+    }
+
+    &__productInfo {
+        margin: 25px;
+        @include font($secondary-font, 20px, #fff);
+    }
+
+    &__row {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__description {
+        margin-top: 10px;
+    }
+
+    &__number {
+        width: 80px;
+        height: 20px;
+        border-style: hidden;
+        opacity: 0.4;
+        @include font($secondary-font, 20px, black);
+    }
+}

@@ -1,0 +1,230 @@
+﻿$primary-color: #2e75ab;
+$secundary-color: #142840;
+$tertiary-color: #6f827c;
+$fourth-color: #f5e8d7;
+$fifthy-color: #fff;
+
+.texto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.titulo {
+    font-family: Roboto,'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datosContacto {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 80px;
+
+    &__titulo {
+        width: 100%;
+    }
+
+    &__formulario {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+.formulario {
+
+    &__datos {
+        width: 100%;
+        margin: 15px;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        &__titulo {
+            text-align: left;
+            width: 30%;
+        }
+
+        &__dato {
+            width: 60%;
+
+
+            &:hover {
+                cursor: pointer;
+                border: 2px solid black;
+                transition: 0.0s;
+                transform: translate(5px,2px);
+                border-radius: 5px;
+            }
+
+            &:focus {
+                background: #f5e8d7;
+            }
+
+            &--combo {
+                color: $tertiary-color;
+            }
+        }
+
+        &__enviar {
+            background: salmon;
+            padding: 4px 14px;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 40%;
+            margin-left: 30%;
+            margin-right: 30%;
+            border: none;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    &__otrosDatos {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__titulo {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.datosUbicacion {
+    width: 50vw;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 80px;
+
+    &__titulo {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    &__mapa {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+.datosOtrosContacto {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-top: 100px;
+    margin-bottom: 40px;
+
+    &__titulo {
+        margin-bottom: 5px;
+
+        &__medio {
+            text-align: center;
+            text-decoration: underline;
+        }
+    }
+
+    &__info {
+        text-align: center;
+        margin-top: 5px;
+    }
+}
+
+
+@media only screen and (max-width:1055px) {
+    * {
+        box-sizing: border-box;
+    }
+
+    .datosContacto {
+        width: 99%;
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+
+        &__titulo {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+    //////////////////////////////////////
+    .datosUbicacion {
+        width: 99%;
+        margin-left: 0px;
+        margin-right: 0px;
+
+        &__titulo {
+            box-sizing: border-box;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        &__mapa {
+            box-sizing: border-box;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+    //////////////////////////////
+    .datosOtrosContacto {
+        width: 99%;
+        margin-top: 20px;
+        text-align: justify;
+
+        &__titulo {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+
+            &__medio {
+                text-align: center;
+            }
+        }
+
+        &__info {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+    //////////////
+    .formulario__datos {
+        flex-direction: column;
+
+        &__enviar {
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+    /////////////////
+    .formulario__datos {
+        &__titulo {
+            text-align: center;
+            width: 90%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+﻿.body_login {
+    margin: 0;
+    padding: 0;
+    background: #667db6; 
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
+    height: 100vh;
+}
+
+.login {
+    width: 320px;
+    height: 420px;
+    color: #fff;
+    background: #222121;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 70px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    @media(max-width:400px) {
+        width: 300px;
+    }
+
+
+    &__logo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+
+        &:hover {
+            box-shadow: 0px 0px 15px 15px #ec731e;
+            -webkit-box-shadow: 0px 0px 15px 15px #fff;
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            transition: 2s;
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 24px;
+        font-family: "Roboto";
+    }
+
+    &__data {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        font-family: "Roboto";
+    }
+
+    &__text {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        color: #fff;
+        font-size: 16px;
+        font-family: "Roboto";
+    }
+
+    &__button {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        background: #1A2980;
+        background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
+        background: linear-gradient(to right, #26D0CE, #1A2980);
+        color: #fff;
+        font-size: 18px;
+        font-family: "Roboto";
+
+        &:hover {
+            cursor: pointer;
+            background: #000428;
+            background: -webkit-linear-gradient(to right, #004e92, #000428);
+            background: linear-gradient(to right, #004e92, #000428);
+            color: #fff;
+        }
+    }
+
+    &__vinculos {
+        text-decoration: none;
+        font-size: 17px;
+        line-height: 30px;
+        color: #fff;
+        font-family: "Roboto";
+
+        &:hover {
+            color: #2e75ab;
+        }
+    }
+}
+
+

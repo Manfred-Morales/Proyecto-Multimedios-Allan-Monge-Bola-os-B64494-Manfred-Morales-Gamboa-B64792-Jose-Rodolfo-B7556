@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="marketsaveusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblDescInvoice">
+          <Key>
+            <PropertyRef Name="idDescInvoice" />
+          </Key>
+          <Property Name="idDescInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idInvoice" Type="int" />
+          <Property Name="productCode" Type="varchar" MaxLength="20" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblInvoice">
+          <Key>
+            <PropertyRef Name="idInvoice" />
+          </Key>
+          <Property Name="idInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userEmail" Type="varchar" MaxLength="50" />
+          <Property Name="dateInvoice" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblProduct">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="productName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="productDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prize" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="stock" Type="int" />
+          <Property Name="productImage" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passw" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="fullName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__TblDescIn__idInv__3E52440B">
+          <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="0..1" />
+          <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblInvoice">
+              <PropertyRef Name="idInvoice" />
+            </Principal>
+            <Dependent Role="TblDescInvoice">
+              <PropertyRef Name="idInvoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDescIn__produ__3F466844">
+          <End Role="TblProduct" Type="Self.TblProduct" Multiplicity="0..1" />
+          <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProduct">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="TblDescInvoice">
+              <PropertyRef Name="productCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblInvoic__userE__3B75D760">
+          <End Role="TblUser" Type="Self.TblUser" Multiplicity="0..1" />
+          <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUser">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="TblInvoice">
+              <PropertyRef Name="userEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="marketsaveusModelStoreContainer">
+          <EntitySet Name="TblDescInvoice" EntityType="Self.TblDescInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblInvoice" EntityType="Self.TblInvoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblProduct" EntityType="Self.TblProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TblDescIn__idInv__3E52440B" Association="Self.FK__TblDescIn__idInv__3E52440B">
+            <End Role="TblInvoice" EntitySet="TblInvoice" />
+            <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDescIn__produ__3F466844" Association="Self.FK__TblDescIn__produ__3F466844">
+            <End Role="TblProduct" EntitySet="TblProduct" />
+            <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblInvoic__userE__3B75D760" Association="Self.FK__TblInvoic__userE__3B75D760">
+            <End Role="TblUser" EntitySet="TblUser" />
+            <End Role="TblInvoice" EntitySet="TblInvoice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="marketsaveusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblDescInvoice">
+          <Key>
+            <PropertyRef Name="idDescInvoice" />
+          </Key>
+          <Property Name="idDescInvoice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idInvoice" Type="Int32" />
+          <Property Name="productCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="TblInvoice" Relationship="Self.FK__TblDescIn__idInv__3E52440B" FromRole="TblDescInvoice" ToRole="TblInvoice" />
+          <NavigationProperty Name="TblProduct" Relationship="Self.FK__TblDescIn__produ__3F466844" FromRole="TblDescInvoice" ToRole="TblProduct" />
+        </EntityType>
+        <EntityType Name="TblInvoice">
+          <Key>
+            <PropertyRef Name="idInvoice" />
+          </Key>
+          <Property Name="idInvoice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateInvoice" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TblDescInvoice" Relationship="Self.FK__TblDescIn__idInv__3E52440B" FromRole="TblInvoice" ToRole="TblDescInvoice" />
+          <NavigationProperty Name="TblUser" Relationship="Self.FK__TblInvoic__userE__3B75D760" FromRole="TblInvoice" ToRole="TblUser" />
+        </EntityType>
+        <EntityType Name="TblProduct">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="productName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="productDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prize" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="stock" Type="Int32" />
+          <Property Name="productImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblDescInvoice" Relationship="Self.FK__TblDescIn__produ__3F466844" FromRole="TblProduct" ToRole="TblDescInvoice" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passw" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TblInvoice" Relationship="Self.FK__TblInvoic__userE__3B75D760" FromRole="TblUser" ToRole="TblInvoice" />
+        </EntityType>
+        <Association Name="FK__TblDescIn__idInv__3E52440B">
+          <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="0..1" />
+          <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblInvoice">
+              <PropertyRef Name="idInvoice" />
+            </Principal>
+            <Dependent Role="TblDescInvoice">
+              <PropertyRef Name="idInvoice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblDescIn__produ__3F466844">
+          <End Role="TblProduct" Type="Self.TblProduct" Multiplicity="0..1" />
+          <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProduct">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="TblDescInvoice">
+              <PropertyRef Name="productCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblInvoic__userE__3B75D760">
+          <End Role="TblUser" Type="Self.TblUser" Multiplicity="0..1" />
+          <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblUser">
+              <PropertyRef Name="email" />
+            </Principal>
+            <Dependent Role="TblInvoice">
+              <PropertyRef Name="userEmail" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="marketsaveusEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblDescInvoice" EntityType="Self.TblDescInvoice" />
+          <EntitySet Name="TblInvoice" EntityType="Self.TblInvoice" />
+          <EntitySet Name="TblProduct" EntityType="Self.TblProduct" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" />
+          <AssociationSet Name="FK__TblDescIn__idInv__3E52440B" Association="Self.FK__TblDescIn__idInv__3E52440B">
+            <End Role="TblInvoice" EntitySet="TblInvoice" />
+            <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblDescIn__produ__3F466844" Association="Self.FK__TblDescIn__produ__3F466844">
+            <End Role="TblProduct" EntitySet="TblProduct" />
+            <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblInvoic__userE__3B75D760" Association="Self.FK__TblInvoic__userE__3B75D760">
+            <End Role="TblUser" EntitySet="TblUser" />
+            <End Role="TblInvoice" EntitySet="TblInvoice" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="marketsaveusModelStoreContainer" CdmEntityContainer="marketsaveusEntities">
+          <EntitySetMapping Name="TblDescInvoice">
+            <EntityTypeMapping TypeName="marketsaveusModel.TblDescInvoice">
+              <MappingFragment StoreEntitySet="TblDescInvoice">
+                <ScalarProperty Name="idDescInvoice" ColumnName="idDescInvoice" />
+                <ScalarProperty Name="idInvoice" ColumnName="idInvoice" />
+                <ScalarProperty Name="productCode" ColumnName="productCode" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblInvoice">
+            <EntityTypeMapping TypeName="marketsaveusModel.TblInvoice">
+              <MappingFragment StoreEntitySet="TblInvoice">
+                <ScalarProperty Name="idInvoice" ColumnName="idInvoice" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="dateInvoice" ColumnName="dateInvoice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProduct">
+            <EntityTypeMapping TypeName="marketsaveusModel.TblProduct">
+              <MappingFragment StoreEntitySet="TblProduct">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productDescription" ColumnName="productDescription" />
+                <ScalarProperty Name="prize" ColumnName="prize" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="productImage" ColumnName="productImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUser">
+            <EntityTypeMapping TypeName="marketsaveusModel.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="passw" ColumnName="passw" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

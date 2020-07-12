@@ -1,0 +1,6 @@
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\bin\Debug\DataLogic.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\bin\Debug\DataLogic.pdb
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\obj\Debug\DataLogic.csprojAssemblyReference.cache
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\obj\Debug\DataLogic.csproj.CoreCompileInputs.cache
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\obj\Debug\DataLogic.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataLogic\obj\Debug\DataLogic.pdb

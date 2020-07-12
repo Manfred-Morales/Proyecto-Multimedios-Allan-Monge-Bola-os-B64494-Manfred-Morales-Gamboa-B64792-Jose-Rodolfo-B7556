@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="marketsaveusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblDescInvoice">
+    <Key>
+      <PropertyRef Name="idDescInvoice" />
+    </Key>
+    <Property Name="idDescInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idInvoice" Type="int" />
+    <Property Name="productCode" Type="varchar" MaxLength="20" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblInvoice">
+    <Key>
+      <PropertyRef Name="idInvoice" />
+    </Key>
+    <Property Name="idInvoice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userEmail" Type="varchar" MaxLength="50" />
+    <Property Name="dateInvoice" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblProduct">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="productName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="productDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="prize" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="stock" Type="int" />
+    <Property Name="productImage" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="email" />
+    </Key>
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="passw" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="fullName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__TblDescIn__idInv__3E52440B">
+    <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="0..1" />
+    <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblInvoice">
+        <PropertyRef Name="idInvoice" />
+      </Principal>
+      <Dependent Role="TblDescInvoice">
+        <PropertyRef Name="idInvoice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblDescIn__produ__3F466844">
+    <End Role="TblProduct" Type="Self.TblProduct" Multiplicity="0..1" />
+    <End Role="TblDescInvoice" Type="Self.TblDescInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProduct">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="TblDescInvoice">
+        <PropertyRef Name="productCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TblInvoic__userE__3B75D760">
+    <End Role="TblUser" Type="Self.TblUser" Multiplicity="0..1" />
+    <End Role="TblInvoice" Type="Self.TblInvoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUser">
+        <PropertyRef Name="email" />
+      </Principal>
+      <Dependent Role="TblInvoice">
+        <PropertyRef Name="userEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="marketsaveusModelStoreContainer">
+    <EntitySet Name="TblDescInvoice" EntityType="Self.TblDescInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblInvoice" EntityType="Self.TblInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblProduct" EntityType="Self.TblProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TblDescIn__idInv__3E52440B" Association="Self.FK__TblDescIn__idInv__3E52440B">
+      <End Role="TblInvoice" EntitySet="TblInvoice" />
+      <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblDescIn__produ__3F466844" Association="Self.FK__TblDescIn__produ__3F466844">
+      <End Role="TblProduct" EntitySet="TblProduct" />
+      <End Role="TblDescInvoice" EntitySet="TblDescInvoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TblInvoic__userE__3B75D760" Association="Self.FK__TblInvoic__userE__3B75D760">
+      <End Role="TblUser" EntitySet="TblUser" />
+      <End Role="TblInvoice" EntitySet="TblInvoice" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

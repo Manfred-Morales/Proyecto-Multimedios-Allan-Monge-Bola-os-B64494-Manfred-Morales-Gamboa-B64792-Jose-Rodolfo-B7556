@@ -1,0 +1,12 @@
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\DataAccess.dll.config
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\DataAccess.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\DataAccess.pdb
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\EntityFramework.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\EntityFramework.xml
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\obj\Debug\DataAccess.dll
+E:\Documentos\4nno\Multimedios\Proyecto\SuperMercadoOnline\SuperMercadoOnline_V-1.0\SuperMercadoOnline\DataAccess\obj\Debug\DataAccess.pdb

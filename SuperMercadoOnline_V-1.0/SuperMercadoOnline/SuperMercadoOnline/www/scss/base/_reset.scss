@@ -1,0 +1,23 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-image: url('../img/MarketF.jpg');
+    background-size: cover;
+    margin-top: -70px;
+}
+
+.h4 {
+    text-align: center;
+    color: #2e75ab;
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+
+    @media(max-width: 1024px) {
+        font-size: 45px;
+    }
+}
